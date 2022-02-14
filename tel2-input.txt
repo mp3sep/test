@@ -1,0 +1,15 @@
+html code:- 
+
+<input type="text" class="form-control" placeholder="Email Or Mobile Number" ng2TelInput
+                          [ng2TelInputOptions]="{initialCountry: 'in', separateDialCode:true}"
+                          (countryChange)="onCountryChange($event)" formControlName="mobileEmail"
+                          [ngClass]="{ 'is-invalid': submitted && f.mobileEmail.errors }" />
+
+
+
+
+ // countryCode : any
+  onCountryChange(event : any) {
+    this.countryCode = event.dialCode
+    console.log("event calling", event.dialCode)
+  }
